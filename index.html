@@ -16,7 +16,7 @@
     <meta name="theme-color" content="#ffffff">
     <meta property="og:title" content="Chris & Efrat are getting married">
     <meta property="og:description" content="We would like to invite you to our big day.">
-    <meta property="og:image" content="img/logo-lg.png">
+    <meta property="og:image" content="img/logo.png">
     <meta property="og:type" content="website">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -61,10 +61,9 @@
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
 </head>
-<body id="top">    
+<body id="top">
 <section class="hero">
     <div class="text-left">
-        <body>
             <div class="title-container">
                 <div class="title-header">
                     <div class="text-left">
@@ -80,7 +79,6 @@
                         Saugerties, NY 12477</h5>
                 </div>
             </div>
-        </body>
     </div>   
     <div class="down-arrow floating-arrow"><a href="#intro"><i class="fa fa-angle-down"></i></a></div>
 </section>
@@ -112,17 +110,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h6 class="header">Events</h6>
+                <h6 class="header">schedule of events</h6>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <img src="img/Timeline_final.png" class="wp2">
+                <img src="img/Timeline_final.png" class="timeline">
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <a href="https://denim-territory-814.notion.site/Wedding-Look-Book-e17b423f06514361b0f93ca8639065b9" class="look-book-link">Wedding Dress/Lookbook Guide</a>
+                <a class="btn look-book-link" href="https://denim-territory-814.notion.site/Wedding-Look-Book-e17b423f06514361b0f93ca8639065b9" target="_blank" rel="noopener noreferrer">Wedding Attire Lookbook</a>
             </div>
         </div>
     </div>
@@ -131,7 +129,53 @@
 <section id="map">
     <section class="video-container text-center">
         <div class="container">
-            <h6>Our venue</h6>     
+            <h6>Our venue</h6>  
+            <section class="map-container">
+                <div class="map-canvas">
+                    <gmp-map
+                        center="42.121030389601664, -73.93281793124876"
+                        zoom="12"
+                        map-id="DEMO_MAP_ID"
+                        style="height: 420px"
+                    >
+                        <gmp-advanced-marker
+                            position="42.121030389601664, -73.93281793124876"
+                            title="Bluestone Basecamp"
+                        ></gmp-advanced-marker>
+                    </gmp-map>
+            
+                </div>
+                <div id="map-content-wrapper" class="pointer-events-none">
+                    <div class="row">
+                        <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+                            <div class="text-center">
+                                <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
+                                    <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Show info
+                                </div>
+                            </div>
+                            <div id="map-content" class="pointer-events-auto">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h7>Bluestone Bed & Basecamp</h7>
+                                        <p>4170 Route 9W, <br>
+                                        Saugerties, NY 12477</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h7>Contact</h7>
+                                        <p><i class="fa fa-mobile"></i> <a href="https://bluestonebasecamp.com/" target="_blank" rel="noopener noreferrer">Website</a><br>
+                                            <i class="fa fa-mobile"></i> <a href="info@bluestonebasecamp.com" target="_blank" rel="noopener noreferrer">Email</a><br>
+                                            <i class="fa fa-mobile"></i> <a href="tel://+1-845-247-7446">845-247-7446</a></p>
+                                    </div>
+                                    <div class="row text-center">
+                                            <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
+                                                map</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </section>     
         </div>
         <div class="video-box">
             <div id="myVideo">
@@ -139,12 +183,13 @@
                     <source src="video/youtube_7EPxldI_JPw_1920x1080_h264_mute.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <div id="location-text">
+                    <h5>Saugerties, NY</h5>
+                    <p>The Hudson River Valley</p>
+                </div>
             </div>
         </div>
-        <div id="location-text">
-            <h5>Saugerties, NY</h5>
-            <p>The Hudson River Valley</p>
-        </div>
+
 
         <script>
             window.addEventListener('scroll', function() {
@@ -158,7 +203,7 @@
 
                 // if (videoCenter >= viewportCenter - 100 && videoCenter <= viewportCenter + 100) {
                 if (videoBottom <= viewportBottom + 100 && videoBottom >= viewportBottom - 400) {
-                    text.style.bottom = '48%';
+                    text.style.bottom = '64%';
                     text.style.zIndex = '1';
                     video.style.height = '100vh';
                 } else {
@@ -169,52 +214,7 @@
             });
         </script>
     </section>
-    <section class="map-container">
-        <div class="map-canvas">
-            <gmp-map
-                center="42.121030389601664, -73.93281793124876"
-                zoom="12"
-                map-id="DEMO_MAP_ID"
-                style="height: 420px"
-            >
-                <gmp-advanced-marker
-                    position="42.121030389601664, -73.93281793124876"
-                    title="Bluestone Basecamp"
-                ></gmp-advanced-marker>
-            </gmp-map>
     
-        </div>
-        <div id="map-content-wrapper" class="pointer-events-none">
-            <div class="row">
-                <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-                    <div class="text-center">
-                        <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
-                            <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Show info
-                        </div>
-                    </div>
-                    <div id="map-content" class="pointer-events-auto">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h7>Bluestone Bed & Basecamp</h7>
-                                <p>4170 Route 9W, <br>
-                                Saugerties, NY 12477</p>
-                            </div>
-                            <div class="col-md-6">
-                                <h7>Contact</h7>
-                                <p><i class="fa fa-mobile"></i> <a href="https://bluestonebasecamp.com/">Website</a><br>
-                                    <i class="fa fa-mobile"></i> <a href="info@bluestonebasecamp.com">Email</a><br>
-                                    <i class="fa fa-mobile"></i> <a href="tel://+1-845-247-7446">845-247-7446</a></p>
-                            </div>
-                            <div class="row text-center">
-                                    <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
-                                        map</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-    </section>  
 </section>
 
 </section>
@@ -245,7 +245,7 @@
                       action=""
                       method="POST">
                     
-                    <a class="button btn-fill rsvp-btn" href="www.google.com">
+                    <a class="button btn-fill rsvp-btn" href="https://form.jotform.com/250287988366172" target="_blank" rel="noopener noreferrer">
                         <i class="fa fa-envelope"></i>&nbsp;&nbsp; 
                         RSVP </a>
                 </form>
