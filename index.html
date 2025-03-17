@@ -129,7 +129,7 @@
 </section>
 
 <section id="map">
-    <section class="map-container text-center">
+    <section class="video-container text-center">
         <div class="container">
             <h6>Our venue</h6>     
         </div>
@@ -146,71 +146,77 @@
             <p>The Hudson River Valley</p>
         </div>
 
+        <script>
+            window.addEventListener('scroll', function() {
+                var video = document.getElementById('myVideo');
+                var text = document.getElementById('location-text');
+                var videoRect = video.getBoundingClientRect();
+                var videoCenter = videoRect.top + videoRect.height / 2;
+                var videoBottom = videoRect.bottom;
+                var viewportCenter = window.innerHeight / 2;
+                var viewportBottom = window.innerHeight;
+
+                // if (videoCenter >= viewportCenter - 100 && videoCenter <= viewportCenter + 100) {
+                if (videoBottom <= viewportBottom + 100 && videoBottom >= viewportBottom - 400) {
+                    text.style.bottom = '48%';
+                    text.style.zIndex = '1';
+                    video.style.height = '100vh';
+                } else {
+                    text.style.bottom = '-20%';
+                    text.style.zIndex = '-1';
+                    video.style.height = '0px';
+                }
+            });
+        </script>
     </section>
-    <script>
-        window.addEventListener('scroll', function() {
-            var video = document.getElementById('myVideo');
-            var text = document.getElementById('location-text');
-            var videoRect = video.getBoundingClientRect();
-            var videoCenter = videoRect.top + videoRect.height / 2;
-            var videoBottom = videoRect.bottom;
-            var viewportCenter = window.innerHeight / 2;
-            var viewportBottom = window.innerHeight;
-
-            // if (videoCenter >= viewportCenter - 100 && videoCenter <= viewportCenter + 100) {
-            if (videoBottom <= viewportBottom + 100 && videoBottom >= viewportBottom - 400) {
-                text.style.bottom = '48%';
-                text.style.zIndex = '1';
-                video.style.height = '100vh';
-            } else {
-                text.style.bottom = '-20%';
-                text.style.zIndex = '-1';
-                video.style.height = '0px';
-            }
-        });
-    </script>
-
-    <section class="map-canvas">
-
-        <gmp-map
-            center="42.121030389601664, -73.93281793124876"
-            zoom="12"
-            map-id="DEMO_MAP_ID"
-            style="height: 420px"
-        >
-        <gmp-advanced-marker
-            position="42.121030389601664, -73.93281793124876"
-            title="Bluestone Basecamp"
-        ></gmp-advanced-marker>
-      </gmp-map>
-    </section>
+    <section class="map-container">
+        <div class="map-canvas">
+            <gmp-map
+                center="42.121030389601664, -73.93281793124876"
+                zoom="12"
+                map-id="DEMO_MAP_ID"
+                style="height: 420px"
+            >
+                <gmp-advanced-marker
+                    position="42.121030389601664, -73.93281793124876"
+                    title="Bluestone Basecamp"
+                ></gmp-advanced-marker>
+            </gmp-map>
     
-    <!-- <div id="map-content-wrapper" class="container pointer-events-none">
-        <div class="row">
-            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-                <div class="text-center">
-                    <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
-                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Show info
-                    </div>
-                </div>
-                <div id="map-content" class="pointer-events-auto">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h7>Bluestone Bed & Basecamp</h7>
-                            <p>4170 Route 9W, <br>
-                            Saugerties, NY 12477</p>
+        </div>
+        <div id="map-content-wrapper" class="pointer-events-none">
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+                    <div class="text-center">
+                        <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
+                            <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Show info
                         </div>
-                        <div class="col-md-6">
-                            <h7>Contact</h7>
-                            <p><i class="fa fa-mobile"></i> <a href="https://bluestonebasecamp.com/">Website</a><br>
-                                <i class="fa fa-mobile"></i> <a href="info@bluestonebasecamp.com">Email</a><br>
-                                <i class="fa fa-mobile"></i> <a href="tel://+1-845-247-7446">845-247-7446</a></p>
+                    </div>
+                    <div id="map-content" class="pointer-events-auto">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h7>Bluestone Bed & Basecamp</h7>
+                                <p>4170 Route 9W, <br>
+                                Saugerties, NY 12477</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h7>Contact</h7>
+                                <p><i class="fa fa-mobile"></i> <a href="https://bluestonebasecamp.com/">Website</a><br>
+                                    <i class="fa fa-mobile"></i> <a href="info@bluestonebasecamp.com">Email</a><br>
+                                    <i class="fa fa-mobile"></i> <a href="tel://+1-845-247-7446">845-247-7446</a></p>
+                            </div>
+                            <div class="row text-center">
+                                    <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
+                                        map</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>  -->
+        </div> 
+    </section>  
+</section>
+
 </section>
 
 <section class="rsvp text-center" id="rsvp">
