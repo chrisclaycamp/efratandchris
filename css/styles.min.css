@@ -217,7 +217,7 @@ Engagement pics
 	color:#fff;font-size:75px;position:absolute; right: 15px;
 }
 
-#showGridButton {font-family: 'Cutive Mono', sans-serif;font-size:2vw;line-height:29px;color: #304982; padding: 20px; width: 100%; max-width: min-content;}
+#showGridButton {font-family: Junicode; sans-serif; font-weight:bold; font-size:2vw;line-height:2vh;color: #304982; padding: 15px; width: 100%; max-width: min-content;margin-bottom: 15px;}
 #showGridButton:hover,#showGridButton:focus {color:#fff;border-color:#152751;background-color:#152751; /* Add underline on hover */}
 
 

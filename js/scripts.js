@@ -78,7 +78,8 @@ $(document).ready(function () {
         groupAll: true,
         padding: 4,
         width: 1000,
-        height: 800
+        height: 800,
+        transitionEffect: "fade"
       });
 
     /***************** Tooltips ******************/
