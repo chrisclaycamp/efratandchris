@@ -162,6 +162,76 @@ Intro
 #intro p{text-align:center}
 
 /* ==========================================================================
+Engagement pics
+========================================================================== */
+
+.hidden {
+    display: none;
+}
+
+
+#photoGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px; /* Thinner space between grid items */
+	background-color: black; /* Background color for gridlines */
+	padding: 1px; /* Padding to ensure gridlines are visible on the edges */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    overflow: auto;
+}
+
+
+.grid-item {
+    position: relative;
+    background-color: #F1EFDD; /* Background color for grid items */
+    background-clip: padding-box; /* Ensure gridlines are between items */
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Maintain a square aspect ratio */
+    overflow: hidden; /* Hide overflow */
+}
+
+.grid-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the grid item and crop overflow */
+    cursor: pointer;
+	padding: 10px;
+}
+
+.close-button {
+    cursor: pointer;
+    background-color: rgb(200, 123, 123);
+    color: white;
+}
+
+.close-button i{
+	color:#fff;font-size:75px;position:absolute; right: 15px;
+}
+
+#showGridButton {font-family: 'Cutive Mono', sans-serif;font-size:2vw;line-height:29px;color: #304982; padding: 20px; width: 100%; max-width: min-content;}
+#showGridButton:hover,#showGridButton:focus {color:#fff;border-color:#152751;background-color:#152751; /* Add underline on hover */}
+
+
+#eng-pics img{width:100%;height:auto;-moz-transition:all 300ms ease-in-out;-o-transition:all 300ms ease-in-out;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out}
+#eng-pics .img-wrap{position:relative;overflow:hidden;border-radius:4px}
+#eng-pics .img-wrap .overlay{position:absolute;width:100%;height:100%;background-color:rgba(255,255,255,.5);-moz-transition:all 300ms ease-in-out;-o-transition:all 300ms ease-in-out;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);opacity:0}
+#eng-pics .img-wrap i{color:#fff;font-size:15px;position:absolute;width:15px;height:15px;top:6px;right:6px}
+#eng-pics .img-wrap:hover img,#eng-pics .img-wrap:focus img{-moz-transform:scale(1.1);-ms-transform:scale(1.1);-o-transform:scale(1.1);-webkit-transform:scale(1.1);transform:scale(1.1)}
+#eng-pics .img-wrap:hover .overlay,#eng-pics .img-wrap:focus .overlay{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";filter:alpha(opacity=1);opacity:1;z-index:9}
+#eng-pics .diamond{width:230px;height:230px;position:absolute;bottom:-145px;left:50%;transform:translateX(-50%);z-index:500}
+#eng-pics .ring{width:75px;height:75px;border-radius:75px;border:10px solid #d0d3d4;position:absolute;left:34%;top:75%;z-index:-1}
+
+
+/* ==========================================================================
 Events
 ========================================================================== */
 
@@ -173,20 +243,8 @@ Events
     display: block;
     margin: 0 auto; /* Center the image horizontally */}
 
-.look-book-link {font-family: 'Cutive Mono', sans-serif;font-size:25px;line-height:29px;color: #304982; padding: 20px; width: 100%; max-width: min-content;}
+.look-book-link {font-family: 'Cutive Mono', sans-serif;font-size:2vw;line-height:29px;color: #304982; padding: 20px; width: 100%; max-width: min-content;}
 .look-book-link:hover,.look-book-link:focus {color:#fff;border-color:#152751;background-color:#152751; /* Add underline on hover */}
-/* ==========================================================================
-Engagement pics
-========================================================================== */
-#eng-pics img{width:100%;height:auto;-moz-transition:all 300ms ease-in-out;-o-transition:all 300ms ease-in-out;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out}
-#eng-pics .img-wrap{position:relative;overflow:hidden;border-radius:4px}
-#eng-pics .img-wrap .overlay{position:absolute;width:100%;height:100%;background-color:rgba(255,255,255,.5);-moz-transition:all 300ms ease-in-out;-o-transition:all 300ms ease-in-out;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);opacity:0}
-#eng-pics .img-wrap i{color:#fff;font-size:15px;position:absolute;width:15px;height:15px;top:6px;right:6px}
-#eng-pics .img-wrap:hover img,#eng-pics .img-wrap:focus img{-moz-transform:scale(1.1);-ms-transform:scale(1.1);-o-transform:scale(1.1);-webkit-transform:scale(1.1);transform:scale(1.1)}
-#eng-pics .img-wrap:hover .overlay,#eng-pics .img-wrap:focus .overlay{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";filter:alpha(opacity=1);opacity:1;z-index:9}
-#eng-pics .diamond{width:230px;height:230px;position:absolute;bottom:-145px;left:50%;transform:translateX(-50%);z-index:500}
-#eng-pics .ring{width:75px;height:75px;border-radius:75px;border:10px solid #d0d3d4;position:absolute;left:34%;top:75%;z-index:-1}
-
 
 /* ==========================================================================
 Venue info

@@ -55,15 +55,31 @@ $(document).ready(function () {
 
     /***************** Initiate Fancybox ******************/
 
-    $('.single_image').fancybox({
-        padding: 4
+    // $('.single_image').fancybox({
+    //     padding: 4
+    // });
+
+    // $('.fancybox').fancybox({
+    //     padding: 4,
+    //     width: 1000,
+    //     height: 800
+    // });
+    document.getElementById('showGridButton').addEventListener('click', function() {
+        document.getElementById('photoGrid').classList.remove('hidden');
+
+
+    });
+    
+    document.querySelector('.close-button').addEventListener('click', function() {
+        document.getElementById('photoGrid').classList.add('hidden');
     });
 
-    $('.fancybox').fancybox({
+    Fancybox.bind("[fancybox]", {
+        groupAll: true,
         padding: 4,
         width: 1000,
         height: 800
-    });
+      });
 
     /***************** Tooltips ******************/
     $('[data-toggle="tooltip"]').tooltip();
