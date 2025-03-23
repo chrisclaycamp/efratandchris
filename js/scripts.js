@@ -66,12 +66,11 @@ $(document).ready(function () {
     // });
     document.getElementById('showGridButton').addEventListener('click', function() {
         document.getElementById('photoGrid').classList.remove('hidden');
-
-
     });
     
     document.querySelector('.close-button').addEventListener('click', function() {
         document.getElementById('photoGrid').classList.add('hidden');
+
     });
 
     Fancybox.bind("[fancybox]", {
