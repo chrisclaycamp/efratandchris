@@ -149,9 +149,9 @@
         </a>
     </div>
     <div class="grid-item"> <!--6-->
-        <a href="img/eng_pics/IMG_4277.jpeg" fancybox>
+        <a href="img/eng_pics/IMG_3865.HEIC" fancybox>
             <div class="img-wrap">
-                <img src="img/eng_pics/IMG_4277.jpeg" alt=""/>
+                <img src="img/eng_pics/IMG_3865.HEIC" alt=""/>
             </div>
         </a>
     </div>
@@ -177,9 +177,9 @@
         </a>
     </div>
     <div class="grid-item"> <!--10-->
-        <a href="img/eng_pics/IMG_7241.HEIC" fancybox>
+        <a href="img/eng_pics/IMG_7241.HEIC" fancybox data-caption="On the beach in Khao Lak, Thailand, June 2024">
             <div class="img-wrap">
-                <img src="img/eng_pics/IMG_7241.HEIC" alt=""/>
+                <img src="img/eng_pics/IMG_7241.HEIC" alt="On the beach in Khao Lak, Thailand, June 2024"/>
             </div>
         </a>
     </div>
@@ -261,7 +261,9 @@
 <section id="map">
     <section class="video-container text-center">
         <div class="container">
-            <h6>Our venue</h6>  
+            <h6>Our venue</h6>
+            <div class="down-arrow floating-arrow"><a href="#video-top"><i class="fa fa-angle-down"></i></a></div>
+            <div id="video-top"></div>
             <section class="map-container">
                 <div class="map-canvas">
                     <gmp-map
@@ -321,30 +323,6 @@
                 </div>
             </div>
         </div>
-
-
-        <script>
-            window.addEventListener('scroll', function() {
-                var video = document.getElementById('myVideo');
-                var text = document.getElementById('location-text');
-                var videoRect = video.getBoundingClientRect();
-                var videoCenter = videoRect.top + videoRect.height / 2;
-                var videoBottom = videoRect.bottom;
-                var viewportCenter = window.innerHeight / 2;
-                var viewportBottom = window.innerHeight;
-
-                // if (videoCenter >= viewportCenter - 100 && videoCenter <= viewportCenter + 100) {
-                if (videoBottom <= viewportBottom + 100 && videoBottom >= viewportBottom - 400) {
-                    text.style.bottom = '64%';
-                    text.style.zIndex = '1';
-                    video.style.height = '100vh';
-                } else {
-                    text.style.bottom = '-20%';
-                    text.style.zIndex = '-1';
-                    video.style.height = '0px';
-                }
-            });
-        </script>
     </section>
     
 </section>

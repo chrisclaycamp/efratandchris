@@ -55,15 +55,6 @@ $(document).ready(function () {
 
     /***************** Initiate Fancybox ******************/
 
-    // $('.single_image').fancybox({
-    //     padding: 4
-    // });
-
-    // $('.fancybox').fancybox({
-    //     padding: 4,
-    //     width: 1000,
-    //     height: 800
-    // });
     document.getElementById('showGridButton').addEventListener('click', function() {
         document.getElementById('photoGrid').classList.remove('hidden');
     });
@@ -81,9 +72,27 @@ $(document).ready(function () {
         transitionEffect: "fade"
       });
 
-    /***************** Tooltips ******************/
-    $('[data-toggle="tooltip"]').tooltip();
+    /***************** Video Swipe ******************/
+    window.addEventListener('scroll', function() {
+        var video = document.getElementById('myVideo');
+        var text = document.getElementById('location-text');
+        var videoRect = video.getBoundingClientRect();
+        var videoCenter = videoRect.top + videoRect.height / 2;
+        var videoBottom = videoRect.bottom;
+        var viewportCenter = window.innerHeight / 2;
+        var viewportBottom = window.innerHeight;
 
+        // if (videoCenter >= viewportCenter - 100 && videoCenter <= viewportCenter + 100) {
+        if (videoBottom <= viewportBottom + 100 && videoBottom >= viewportBottom - 400) {
+            text.style.bottom = '64%';
+            text.style.zIndex = '1';
+            video.style.height = '100vh';
+        } else {
+            text.style.bottom = '-20%';
+            text.style.zIndex = '-1';
+            video.style.height = '0px';
+        }
+    });
     /***************** Nav Transformicon ******************/
 
     /* When user clicks the Icon */

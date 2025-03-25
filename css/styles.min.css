@@ -276,10 +276,25 @@ Venue info
 }
 
 #map .map-container{position: relative; height: 75vh; margin: 115vh 0 10vh 0}
+#map .down-arrow{
+    color: #fff; /* Set the arrow color to white using hexadecimal notation */
+    font-size: 30px;
+    position: absolute;
+    top: 10%; /* Adjust this value to move the arrow up or down */
+	bottom: 0px;
+    left: 50%; /* Center the arrow horizontally */
+    transform: translateX(-50%); /* Center the arrow horizontally */
+}
+
+#map .down-arrow a{
+    color: #fff; /* Set the arrow color to white using hexadecimal notation */
+}
+	#map .down-arrow a:hover{
+		color: #152751; /* Set the arrow color to white using hexadecimal notation */
+	}
 #map .map-container .map-canvas{border-color:#d3b56a;height:420px;width:60%;margin: 0 auto;position: relative;text-align: center}
 #map .map-canvas .container{text-align: center;}
 #map .map-canvas h3{color:#152751;z-index: 1000}
-
 #map-content-wrapper{position: absolute;top: 0px; width:100%; z-index: 3;} 
 #map-content{padding:50px 60px;background:#fff;-webkit-transition:opacity .5s,visibility .6s,margin-top .5s;transition:opacity .5s,visibility .6s,margin-top .5s}
 #btn-show-content{margin-top:0px;padding:20px;background:#fff;cursor:pointer;display:inline-block;color: #152751;-webkit-transition:opacity .5s,visibility .6s,margin-top .5s;transition:opacity .5s,visibility .6s,margin-top .5s}
