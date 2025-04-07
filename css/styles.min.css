@@ -223,6 +223,8 @@ Engagement pics
 #showGridButton {font-family: Junicode, sans-serif; font-weight:bold; font-size:2vw;line-height:2vh;color: #152751; padding: 2vh; width: 100%; max-width: min-content;margin-bottom: 15px;}
 #showGridButton:hover,#showGridButton:focus {color:#fff;border-color:#152751;background-color:#152751; /* Add underline on hover */}
 
+#registry{font-family: Junicode, sans-serif; font-size:2vw;line-height:2vh;color: #152751; padding: 2vh; width: 100%; max-width: min-content;margin-top: 50px;}
+#registry:hover,#registry:focus {color:#fff;border-color:#152751;background-color:#152751; /* Add underline on hover */}
 
 #eng-pics img{width:100%;height:auto;-moz-transition:all 300ms ease-in-out;-o-transition:all 300ms ease-in-out;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out}
 #eng-pics .img-wrap{position:relative;overflow:hidden;border-radius:4px}
